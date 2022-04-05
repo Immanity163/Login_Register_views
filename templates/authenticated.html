@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>authenticated</title>
+</head>
+<body>
+    {% if user.is_authenticated %}
+    {{user.get_username}}
+    <a href="{% url 'logout'%}?next={{request.path}}"><div class="menu-object">Log out</div></a>
+    {%else%}
+    <p>you are not authenticated</p>
+    <a href="{% url 'login'%}?next={{request.path}}">Login</a>
+    {%endif%}
+</body>
+</html>

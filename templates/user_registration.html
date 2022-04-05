@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+</head>
+<body>
+    {% if form.errors %} 
+    <div class="alert alert-danger">
+       <strong>Oops,error.</strong>
+    </div>
+  {% endif %}
+    <div class = "form">
+    <form method="post" action="">
+     {% csrf_token %}
+    
+  
+      
+        <p>Your Nickname</p>
+        <p>{{ form.username }}</p> 
+      
+  
+     
+      <p>Your password</p>
+      <p>{{ form.password1 }}</p> 
+      <p>Confirm password</p> 
+      <p>{{ form.password2 }}</p> 
+   
+  
+  
+  
+  <input type="submit" value="Зарегестрироваться" />
+  </form>
+</div>
+</body>
+</html>
